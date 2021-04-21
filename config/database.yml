@@ -9,6 +9,11 @@ development:
   <<: *default
   database: my_awesome_api_development
 
+test:
+  <<: *default
+  username: postgres
+  database: my_awesome_api_development
+
 production:
   <<: *default
   database: my_awesome_api_production

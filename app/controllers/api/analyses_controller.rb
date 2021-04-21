@@ -54,7 +54,9 @@ class Api::AnalysesController < ApplicationController
       .new(url)
       .image
       .concepts_with_percent
+      
   end
+
 
   # takes category from params and converts to symbol 
   def analysis_category
