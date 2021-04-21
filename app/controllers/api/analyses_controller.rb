@@ -51,7 +51,7 @@ class Api::AnalysesController < ApplicationController
 
   # sends data to Clarifai AI API (image analysis)
   def image_analysis(url)
-    binding.pry       
+           
     Clarifai::Rails::Detector
       .new(url)
       .image

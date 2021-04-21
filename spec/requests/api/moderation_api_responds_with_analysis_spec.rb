@@ -14,7 +14,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
     end
 
     it '123' do
-      expect(responce_json["category"]).to eq "image"
+      expect(JSON.parse(response.body)["category"]).to eq "image"
     end
 
 #let(:expected_response) do
