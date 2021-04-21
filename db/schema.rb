@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20171219160021) do
   create_table "analyses", force: :cascade do |t|
     t.string "category"
     t.text "resource"
-    t.hstore "results"
+    t.hstore "results", null: false
     t.string "request_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

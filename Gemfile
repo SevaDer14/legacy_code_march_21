@@ -11,9 +11,12 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'clarifai-rails', '~> 0.2.1'
 gem 'rest-client'
 gem 'monkeylearn'
+gem 'mimemagic'
 
 group :development, :test do
-  gem 'pry-byebug'
+ 
+  gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :development do
