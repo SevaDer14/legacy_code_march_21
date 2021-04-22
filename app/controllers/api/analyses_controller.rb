@@ -27,6 +27,7 @@ class Api::AnalysesController < ApplicationController
   #takes :analysis data from params, permits all fields (better to reduce scope)
   #used as input to new Analysis class
   def analysis_params
+    
     params.require(:analysis).permit!
   end
 
@@ -50,6 +51,7 @@ class Api::AnalysesController < ApplicationController
 
   # sends data to Clarifai AI API (image analysis)
   def image_analysis(url)
+           
     Clarifai::Rails::Detector
       .new(url)
       .image
