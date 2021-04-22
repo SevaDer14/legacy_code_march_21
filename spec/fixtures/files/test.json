@@ -1,0 +1,11 @@
+{
+  "input": [
+    {
+      "data": {
+        "image": {
+          "url": "https://api.clarifai.com/v2/models/d16f390eb32cad478c7ae150069bd2c6/outputs"
+        }
+      }
+    }
+  ]
+}
