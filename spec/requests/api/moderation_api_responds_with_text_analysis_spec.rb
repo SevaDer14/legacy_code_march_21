@@ -10,7 +10,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
 
   describe 'receives response for correct request' do
     
-    params = {
+    params = { 
        analysis: {
           resource: "Have a nice day kind sir",
           category: "text"
@@ -27,7 +27,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
       expect(response).to have_http_status 200
     end
    
-    it 'it shows image moderation results' do
+    it 'it shows text moderation results' do
       expect(JSON.parse(response.body)[:results]).to eq JSON.parse(expected_results)[:results]
     end
   end
