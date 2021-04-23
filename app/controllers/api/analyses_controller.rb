@@ -46,6 +46,7 @@ class Api::AnalysesController < ApplicationController
   def text_analysis(text)
     model_id = 'cl_KFXhoTdt' # Profanity & Abuse Detection
     response = Monkeylearn.classifiers.classify(model_id, [text])
+    binding.pry
     response.body[0]
   end
 
