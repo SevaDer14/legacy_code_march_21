@@ -1,10 +1,10 @@
 RSpec.describe 'POST /api/analyses', type: :request do
   
-  let(:expected_response) do
+  let(:clarifai_responce) do
     file_fixture('clarifai_api_response.json').read
   end
 
-  let(:test) do
+  let(:expected_results) do
     file_fixture('image_moderation_results.json').read
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
 
     before do        
       stub_request(:post, "https://api.clarifai.com/v2/models/d16f390eb32cad478c7ae150069bd2c6/outputs")
-      .to_return(status: 200, body: expected_response )
+      .to_return(status: 200, body: clarifai_responce )
       post '/api/analyses', params: params 
     end
 
@@ -28,7 +28,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
     end
    
     it 'it shows image moderation results' do
-      expect(JSON.parse(response.body)[:results]).to eq JSON.parse(test)[:results]
+      expect(JSON.parse(response.body)[:results]).to eq JSON.parse(expected_results)[:results]
     end
   end
 end
