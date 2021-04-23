@@ -21,8 +21,7 @@ class Api::AnalysesController < ApplicationController
   private
 
   def analysis_params
-    
-    params.require(:analysis).permit!
+    params.require(:analysis).permit(:resource, :category)
   end
 
   def analyze_resource
@@ -41,7 +40,6 @@ class Api::AnalysesController < ApplicationController
   end
 
   def image_analysis(url)
-           
     Clarifai::Rails::Detector
       .new(url)
       .image
