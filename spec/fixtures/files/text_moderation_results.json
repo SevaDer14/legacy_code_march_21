@@ -1,0 +1,14 @@
+{
+  "id": 41,
+  "category": "text",
+  "resource": "Have a nice day kind sir",
+  "results": {
+      "text": "Have a nice day kind sir",
+      "external_id": null,
+      "error": "false",
+      "classifications": "[{\"tag_name\"=>\"clean\", \"tag_id\"=>57725628, \"confidence\"=>0.97}]"
+  },
+  "request_ip": "213.80.123.2",
+  "created_at": "2021-04-21T10:55:51.594Z",
+  "updated_at": "2021-04-21T10:55:51.594Z"
+}
