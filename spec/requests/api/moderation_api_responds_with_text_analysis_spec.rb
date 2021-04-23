@@ -1,6 +1,6 @@
 RSpec.describe 'POST /api/analyses', type: :request do
   
-  let(:monkeylearn_responce) do
+  let(:monkeylearn_response) do
     file_fixture('monkeylearn_api_response.json').read
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'POST /api/analyses', type: :request do
 
     before do        
       stub_request(:post, "https://api.monkeylearn.com/v3/classifiers/cl_KFXhoTdt/classify/")
-      .to_return(status: 200, body: monkeylearn_responce)
+      .to_return(status: 200, body: monkeylearn_response)
       post '/api/analyses', params: params 
     end
 
@@ -27,8 +27,8 @@ RSpec.describe 'POST /api/analyses', type: :request do
       expect(response).to have_http_status 200
     end
    
-    it 'it shows text moderation results' do
-      expect(JSON.parse(response.body)[:results]).to eq JSON.parse(expected_results)[:results]
+    it 'it shows text moderation results' do      
+      expect(JSON.parse(response.body)["results"]).to eq JSON.parse(expected_results)["results"]
     end
   end
 end
